@@ -9,6 +9,10 @@ public class Purchase {
         coffee = purchaseBuilder.getCoffee();
     }
 
+    public void checkOut() {
+        System.out.println("Purchase sold");
+    }
+
     @Override
     public String toString() {
         return "Purchase{" +
