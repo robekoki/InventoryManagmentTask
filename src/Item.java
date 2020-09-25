@@ -49,4 +49,13 @@ public class Item {
         this.price = price;
         this.countInStorage = countInStorage;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", countInStorage=" + countInStorage +
+                '}';
+    }
 }
