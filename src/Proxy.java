@@ -9,12 +9,12 @@ public class Proxy {
         return "123".equals(password);
     }
 
-   public void checkOut(String pass) {
-        if(enterPassword(pass)) {
-            purchase.checkOut();
-        } else {
-            System.out.println("Wrong password");
-        }
-   }
+//   public void checkOut(String pass) {
+//        if(enterPassword(pass)) {
+//            purchase.checkOut();
+//        } else {
+//            System.out.println("Wrong password");
+//        }
+//   }
 
 }

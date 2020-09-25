@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+
 public class Purchase {
     private Laptop laptop;
     private Car car;
@@ -9,8 +11,12 @@ public class Purchase {
         coffee = purchaseBuilder.getCoffee();
     }
 
-    public void checkOut() {
-        System.out.println("Purchase sold");
+    public void checkOut(BankAccount bankAccount) {
+        if(bankAccount.canAfford(this)) {
+            System.out.println("Success");
+        } else {
+            System.out.println("Not enough money");
+        }
     }
 
     @Override
@@ -20,5 +26,9 @@ public class Purchase {
                 ", car=" + car +
                 ", coffee=" + coffee +
                 '}';
+    }
+
+    public BigDecimal getTotalCost() {
+        return laptop.getPrice().add(car.getPrice()).add(coffee.getPrice());
     }
 }

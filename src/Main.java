@@ -13,8 +13,10 @@ public class Main {
         Purchase purchase = new Purchase(new PurchaseBuilder().addCar(car).addCoffee(coffee).addLaptop(laptop));
         System.out.println(purchase);
 
-        Proxy proxy = new Proxy(purchase);
-        proxy.checkOut("wrongpassword");
-        proxy.checkOut("123");
+        BankAccount bankAccount = new BankAccount(BigDecimal.valueOf(200));
+        purchase.checkOut(bankAccount);
+        bankAccount = new BankAccount(BigDecimal.valueOf(10_000_00));
+        purchase.checkOut(bankAccount);
+
     }
 }
