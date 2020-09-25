@@ -35,13 +35,18 @@ public class Item {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Item item = (Item) o;
-        return countInStorage == item.countInStorage &&
-                Objects.equals(name, item.name) &&
+        return Objects.equals(name, item.name) &&
                 Objects.equals(price, item.price);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, price, countInStorage);
+        return Objects.hash(name, price);
+    }
+
+    public Item(String name, BigDecimal price, int countInStorage) {
+        this.name = name;
+        this.price = price;
+        this.countInStorage = countInStorage;
     }
 }
